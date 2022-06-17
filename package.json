@@ -1,6 +1,6 @@
 {
   "name": "examplecrud-sls",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Crud example with serverless framework",
   "main": "index.js",
   "scripts": {
