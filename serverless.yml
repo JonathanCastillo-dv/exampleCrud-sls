@@ -5,3 +5,5 @@ provider:
   runtime: nodejs14.x
 functions:
   - ${file(src/index.yml)}
+resources:
+  - ${file(src/user/table.yml)}
