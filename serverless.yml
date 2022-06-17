@@ -1,0 +1,7 @@
+service: exampleCrud-sls
+frameworkVersion: '3'
+provider:
+  name: aws
+  runtime: nodejs14.x
+functions:
+  - ${file(src/index.yml)}

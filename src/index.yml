@@ -1,0 +1,24 @@
+addUser:
+  handler: src/user/adduser/handler.addUser
+  events:
+    - httpApi:
+        path: /
+        method: post
+getUser:
+  handler: src/user/adduser/handler.getUser
+  events:
+    - httpApi:
+        path: /
+        method: get
+deleteUser:
+  handler: src/user/adduser/handler.deleteUser
+  events:
+    - httpApi:
+        path: /
+        method: delete
+putUser:
+  handler: src/user/adduser/handler.putUser
+  events:
+    - httpApi:
+        path: /
+        method: put
