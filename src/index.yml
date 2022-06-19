@@ -16,10 +16,11 @@ getUser:
     - httpApi:
         path: /
         method: get
+  package:
+    individually: true
   iamRoleStatements:
     - Effect: Allow
       Action:
-        - "dynamodb:BatchGet*"
         - "dynamodb:Scan"
       Resource:
         - Fn::GetAtt: [userTable, Arn]
