@@ -1,5 +1,9 @@
 service: exampleCrud-sls
 frameworkVersion: '3'
+
+plugins:
+  - serverless-iam-roles-per-function
+
 provider:
   name: aws
   runtime: nodejs14.x

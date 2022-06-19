@@ -4,21 +4,47 @@ addUser:
     - httpApi:
         path: /
         method: post
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "dynamodb:PutItem"
+      Resource:
+        - Fn::GetAtt: [userTable, Arn]
 getUser:
-  handler: src/user/adduser/handler.getUser
+  handler: src/user/getuser/handler.getUser
   events:
     - httpApi:
         path: /
         method: get
+  package:
+    individually: true
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "dynamodb:Scan"
+      Resource:
+        - Fn::GetAtt: [userTable, Arn]
 deleteUser:
-  handler: src/user/adduser/handler.deleteUser
+  handler: src/user/deleteuser/handler.deleteUser
   events:
     - httpApi:
         path: /
         method: delete
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "dynamodb:Delete*"
+      Resource:
+        - Fn::GetAtt: [userTable, Arn]
 putUser:
-  handler: src/user/adduser/handler.putUser
+  handler: src/user/putuser/handler.putUser
   events:
     - httpApi:
         path: /
         method: put
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "dynamodb:Update*"
+      Resource:
+        - Fn::GetAtt: [userTable, Arn]
