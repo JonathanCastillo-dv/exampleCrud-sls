@@ -3,15 +3,14 @@ const { DynamoDBDocumentClient } = require("@aws-sdk/lib-dynamodb");
 const { DynamoDBClient, ScanCommand, DeleteItemCommand } = require("@aws-sdk/client-dynamodb");
 const ddbClient = new DynamoDBClient({ region: 'us-east-1' });
 
-const putUserDB = async (params) => {
-    console.log("PARAMS!",params)
+const addUserDB = async (params) => {
     try {
         await ddbClient.send(new PutCommand(params));
         return {
             msg: 'successfully registered user',
         };
     } catch (error) {
-        console.log("ERROR",error)
+        console.log("ERROR", error)
         return {
             error,
         }
@@ -45,8 +44,7 @@ const deleteUserDB = async (params) => {
 
 const updateUserDB = async (params) => {
     try {
-      const data =  await ddbClient.send(new UpdateCommand(params));
-      console.log("updateUserDB",data)
+        const data = await ddbClient.send(new UpdateCommand(params));
         return {
             msg: 'successfully update user',
         }
@@ -59,7 +57,7 @@ const updateUserDB = async (params) => {
 }
 
 module.exports = {
-    putUserDB,
+    addUserDB,
     getUserDB,
     deleteUserDB,
     updateUserDB

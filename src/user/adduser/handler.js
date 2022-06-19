@@ -1,6 +1,6 @@
 "use strict";
 const { v4: uuidv4 } = require('uuid');
-const { putUserDB } = require('../../service/db');
+const { addUserDB } = require('../../service/db');
 
 module.exports.addUser = async (event) => {
 const {userName,lastName} = JSON.parse(event.body);
@@ -12,6 +12,6 @@ const params = {
       lastname:lastName,
     },
   };
-  return putUserDB(params);
+  return addUserDB(params);
 };
 
