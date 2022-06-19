@@ -3,6 +3,8 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs14.x
+  iam:
+    role: ${file(src/user/iam.yml)}
 functions:
   - ${file(src/index.yml)}
 resources:

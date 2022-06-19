@@ -5,19 +5,19 @@ addUser:
         path: /
         method: post
 getUser:
-  handler: src/user/adduser/handler.getUser
+  handler: src/user/getuser/handler.getUser
   events:
     - httpApi:
         path: /
         method: get
 deleteUser:
-  handler: src/user/adduser/handler.deleteUser
+  handler: src/user/deleteuser/handler.deleteUser
   events:
     - httpApi:
         path: /
         method: delete
 putUser:
-  handler: src/user/adduser/handler.putUser
+  handler: src/user/putuser/handler.putUser
   events:
     - httpApi:
         path: /

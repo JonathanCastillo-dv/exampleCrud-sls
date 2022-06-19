@@ -12,5 +12,10 @@
     "NODEJS"
   ],
   "author": "Jonathan castillo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.113.0",
+    "@aws-sdk/lib-dynamodb": "^3.113.0",
+    "uuid": "^8.3.2"
+  }
 }
