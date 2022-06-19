@@ -1,14 +1,12 @@
 "use strict";
-
+const { deleteUserDB } = require("../../service/db");
 module.exports.deleteUser = async (event) => {
-  return {
-    body: JSON.stringify(
-      {
-        message: "Go Serverless v3.0! Your function executed successfully!",
-        input: event,
-      },
-      null,
-      2
-    ),
+  const idUser = event.queryStringParameters.id;
+  const params = {
+    TableName: "userTable",
+    Key: {
+      id: { S: idUser },
+    },
   };
+  return deleteUserDB(params);
 };
